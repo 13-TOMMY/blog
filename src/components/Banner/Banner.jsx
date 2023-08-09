@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { db } from '../../../config/firebaseCongfig';
+import { db } from '../../config/firebaseCongfig';
 
 
-// get data when banner loads
 const Banner = () => {
   const [mainArticle, setMainArticle] = useState({});
   const [otherArticles, setOtherArticles] = useState([]);

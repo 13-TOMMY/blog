@@ -3,10 +3,12 @@ import "./CategoryArticle.css";
 import { useParams } from "react-router-dom";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../config/firebaseCongfig";
+import ArticleCard from '../../components/ArticleCard/ArticleCard';
 
-function CategoryArticle() {
-  const { categoryName } = useParams();
+const CategoryArticle = () => {
   const [articles, setArticles] = useState([]);
+
+  const { categoryName } = useParams();
 
   useEffect(() => {
     const articlesRef = collection(db, "articles");
@@ -17,20 +19,22 @@ function CategoryArticle() {
       const articles = res.docs.map((item) => {
         return {
           ...item.data(),
-          id: item.id,
+          id: item?.id,
         };
       });
+
+      // console.log(articles);
       setArticles(articles);
     });
   }, [categoryName]);
 
   return (
-    <div>
+    <div className="category-articles">
       {articles.map((item) => (
-        <p>{item.title}</p>
+        <ArticleCard article={item} />
       ))}
     </div>
   );
-}
+};
 
 export default CategoryArticle;
