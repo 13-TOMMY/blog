@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/category/:categoryNAme" element={<CategoryArticle />} />
+          <Route path="/category/:categoryName" element={<CategoryArticle />} />
         </Routes>
       </BrowserRouter>
     </>
