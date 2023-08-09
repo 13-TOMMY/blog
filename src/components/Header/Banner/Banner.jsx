@@ -8,25 +8,20 @@ import { db } from '../../../config/firebaseCongfig';
 const Banner = () => {
   const [mainArticle, setMainArticle] = useState({});
   const [otherArticles, setOtherArticles] = useState([]);
-  useEffect(() => {
-    // create a variable to reference the article collection
-    const articlesRef = collection(db, "articles");
 
-    // setup query to filter responses
-    // sort and then get the first 5
+  useEffect(() => {
+
+    const articlesRef = collection(db, "articles");
     const q = query(articlesRef, orderBy("createdAt", "desc"), limit(5));
 
-    // get articles from the db
-    getDocs(q, articlesRef)
-      .then((res) => {
-        // console.log(res.docs[0].data());
+   
+    getDocs(q, articlesRef).then((res) => {
         const articles = res.docs.map((item) => {
           return {
             ...item.data(),
             id: item.id,
           };
         });
-        // console.log(articles);
         setMainArticle(articles[0]);
         setOtherArticles(articles.splice(1));
       })
@@ -38,7 +33,7 @@ const Banner = () => {
       <div
         className="main-article-container"
         key={mainArticle?.id}
-        style={{ backgroundImage: `url(${mainArticle?.imageURL})` }}
+        style={{ backgroundImage: `url(${mainArticle?.img})` }}
       >
         <div className="banner-info">
           <h2>{mainArticle?.title}</h2>
@@ -53,7 +48,7 @@ const Banner = () => {
             <div
               className="other-article-item"
               key={item.id}
-              style={{ backgroundImage: `url(${item?.imageURL})` }}
+              style={{ backgroundImage: `url(${item?.img})` }}
             >
               <div className="banner-info">
                 <h3>{item?.title}</h3>

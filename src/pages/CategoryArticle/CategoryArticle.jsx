@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CategoryArticle.css";
 import { useParams } from "react-router-dom";
 import { collection, query, getDocs, where } from "firebase/firestore";
+import { db } from "../../config/firebaseCongfig";
 
 function CategoryArticle() {
   const { categoryName } = useParams();
