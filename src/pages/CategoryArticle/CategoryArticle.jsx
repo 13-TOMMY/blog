@@ -23,7 +23,6 @@ const CategoryArticle = () => {
         };
       });
 
-      // console.log(articles);
       setArticles(articles);
     });
   }, [categoryName]);
@@ -31,7 +30,7 @@ const CategoryArticle = () => {
   return (
     <div className="category-articles">
       {articles.map((item) => (
-        <ArticleCard article={item} />
+        <ArticleCard key={item.id} article={item} />
       ))}
     </div>
   );
