@@ -15,29 +15,34 @@ function Header() {
   const navigate = useNavigate();
   return (
     <div className="header-container">
-    <FaHome className="nav-link" onClick={() => navigate("/")} />
-    <div className="categories-container">
-      {categories.map((item, index) => (
-        <Link to={`/category/${item}`} className="nav-link" key={index}>
-          {item}
+      <FaHome className="nav-link" onClick={() => navigate("/")} />
+      {user && (
+        <Link to="/addArticle" className="auth-link">
+          Add Article
         </Link>
-      ))}
-    </div>
-    {user ? (
-      <div>
-        <span className="username">
-          {user.displayName ? user.displayName : user.email}
-        </span>
-        <button className="auth-link" onClick={() => signOut(auth)}>
-          Log out
-        </button>
+      )}
+      <div className="categories-container">
+        {categories.map((item, index) => (
+          <Link to={`/category/${item}`} className="nav-link" key={index}>
+            {item}
+          </Link>
+        ))}
       </div>
-    ) : (
-      <Link className="auth-link" to={"/auth"}>
-        Signup
-      </Link>
-    )}
-  </div>
+      {user ? (
+        <div>
+          <span className="username">
+            {user.displayName ? user.displayName : user.email}
+          </span>
+          <button className="auth-link" onClick={() => signOut(auth)}>
+            Log out
+          </button>
+        </div>
+      ) : (
+        <Link className="auth-link" to={"/auth"}>
+          Signup
+        </Link>
+      )}
+    </div>
   );
 }
 

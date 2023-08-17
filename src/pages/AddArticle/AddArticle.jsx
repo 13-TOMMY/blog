@@ -28,27 +28,22 @@ function AddArticle() {
     e.preventDefault();
     console.log("submit");
 
-    //create a reference for the image
     const imageRef = ref(storage, `images/${formData.image.name + v4()}`);
 
-    // now upload the image to the bucket
     uploadBytes(imageRef, formData.image)
       .then((res) => {
-        // now get url from this ref
         getDownloadURL(res.ref).then((url) => {
-          // now we have all the data and the url
-          // create article reference
           const articleRef = collection(db, "articles");
 
-          // use addDoc to add the article to the collection
 
           //   addDoc(articleRef, {
           //     ...formData,
-          //     imageURL: url,
+          //     img: url,
           //     createdBy: user.displayName,
           //     userId: user.uid,
           //     createdAt: Timestamp.now().toDate(),
           //   });
+            
           addDoc(articleRef, {
             title: formData.title,
             summary: formData.summary,
@@ -56,7 +51,7 @@ function AddArticle() {
             ParagraghTwo: formData.ParagraghTwo,
             ParagraghThree: formData.ParagraghThree,
             category: formData.category,
-            imageURL: url,
+            img: url,
             createdBy: user.displayName,
             userId: user.uid,
             createdAt: Timestamp.now().toDate(),
@@ -66,13 +61,12 @@ function AddArticle() {
       .then((res) => {
         toast("Article added successfully!", {
           type: "success",
-          autoClose: 1500,
+          autoClose: 1000,
         });
 
-        // pause before redirecting the user to home page
         setTimeout(() => {
           navigate("/");
-        }, 2000);
+        }, 1000);
       });
   };
   return (
