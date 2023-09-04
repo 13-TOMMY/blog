@@ -34,15 +34,6 @@ function AddArticle() {
       .then((res) => {
         getDownloadURL(res.ref).then((url) => {
           const articleRef = collection(db, "articles");
-
-
-          //   addDoc(articleRef, {
-          //     ...formData,
-          //     img: url,
-          //     createdBy: user.displayName,
-          //     userId: user.uid,
-          //     createdAt: Timestamp.now().toDate(),
-          //   });
             
           addDoc(articleRef, {
             title: formData.title,

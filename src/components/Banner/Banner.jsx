@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
-import { db } from '../../config/firebaseCongfig';
-
+import { db } from "../../config/firebaseCongfig";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
   const [mainArticle, setMainArticle] = useState({});
   const [otherArticles, setOtherArticles] = useState([]);
 
-  useEffect(() => {
+  const navigate = useNavigate();
 
+  useEffect(() => {
     const articlesRef = collection(db, "articles");
     const q = query(articlesRef, orderBy("createdAt", "desc"), limit(5));
 
-   
-    getDocs(q, articlesRef).then((res) => {
+    getDocs(q, articlesRef)
+      .then((res) => {
         const articles = res.docs.map((item) => {
           return {
             ...item.data(),
@@ -31,6 +32,7 @@ const Banner = () => {
     <div className="banner-container">
       <div
         className="main-article-container"
+        onClick = {() => navigate(`/article/${mainArticle?.id}`)}
         key={mainArticle?.id}
         style={{ backgroundImage: `url(${mainArticle?.img})` }}
       >
@@ -46,6 +48,7 @@ const Banner = () => {
           return (
             <div
               className="other-article-item"
+              onClick={() => navigate(`/article/${item?.id}`)}
               key={item.id}
               style={{ backgroundImage: `url(${item?.img})` }}
             >

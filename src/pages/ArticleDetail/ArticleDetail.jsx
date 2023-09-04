@@ -33,10 +33,10 @@ function ArticleDetail() {
         <Likes articleId={articleId} />
       </div>
       <div className="details-content">
-        <img src={article?.imageURL} className='details-img' />
-        <p className='article-description'>{article?.ParagraphOne}</p>
-        <p className='article-description'>{article?.ParagraphTwo}</p>
-        <p className='article-description'>{article?.ParagraphThree}</p>
+        <img src={article?.img} className='details-img' />
+        <p className='article-description'>{article?.ParagraghOne}</p>
+        <p className='article-description'>{article?.ParagraghTwo}</p>
+        <p className='article-description'>{article?.ParagraghThree}</p>
       </div>
     </div>
   )
