@@ -4,6 +4,7 @@ import { db} from '../../config/firebaseCongfig'
 import { useParams } from 'react-router-dom'
 import Likes from '../../components/Likes/Likes'
 import './ArticleDetail.css'
+import Comments from '../../components/Comments/Comments'
 
 function ArticleDetail() {
   const { articleId } = useParams();
@@ -38,6 +39,7 @@ function ArticleDetail() {
         <p className='article-description'>{article?.ParagraghTwo}</p>
         <p className='article-description'>{article?.ParagraghThree}</p>
       </div>
+      <Comments articleId={articleId}/>
     </div>
   )
 }
