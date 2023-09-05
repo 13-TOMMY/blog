@@ -1,18 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+html {
+  background: rgb(255, 166, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 166, 158, 1) 0%,
+    rgba(250, 243, 221, 1) 10%,
+    rgba(184, 242, 230, 1) 20%,
+    rgba(174, 217, 224, 1) 30%,
+    rgba(255, 255, 255, 1) 60%
+  );
 }
 
-:root{
-    --red: #e50916;
-    --white:#fff; 
-    --header-height:70px;
-    --dark-bg:#221f1f;
-    --light-bg:#f7f3f3;
-    --button-bg:rgb(77, 77, 156);
-    --transparent-bg:rgba(20, 20, 20, 0.7);
-  }
+:root {
+  --primary-color: #ffa69e;
+  --background-color: #faf3dd;
+  --accent-color: #b8f2e6;
+  --secondary-color: #aed9e0;
+  --dark-background-color: #5e6472;
+  --white: #ffffff;
+  --black: #000000;
+}

@@ -14,28 +14,14 @@ import {
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
-function Comments({ articleId }) {
-  const [user] = useAuthState();
+const Comments = ({ articleId }) => {
+  const [user] = useAuthState(auth);
+
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    // get reference to comments collection
     const commentsRef = collection(db, "comments");
-
-    // get the comments
-    // getDocs(commentsRef)
-    //   .then((res) => {
-    //     // convert to array
-    //     const comments = res.docs.map((item) => ({
-    //       ...item.data(),
-    //       id: item.id,
-    //     }));
-    //     setComments(comments);
-    //   })
-    //   .catch((err) => console.log(err));
-
-    // filter to show only comments for this article
     const q = query(commentsRef, where("articleId", "==", articleId));
 
     onSnapshot(q, (snapshot) => {
@@ -51,6 +37,7 @@ function Comments({ articleId }) {
 
   const addNewComment = (e) => {
     e.preventDefault();
+ 
     const commentsRef = collection(db, "comments");
 
     addDoc(commentsRef, {
@@ -66,7 +53,9 @@ function Comments({ articleId }) {
       setNewComment("");
     });
   };
+
   const deleteComment = (id) => {
+    // get the particluar document
     deleteDoc(doc(db, "comments", id))
       .then((res) => {
         toast("Comment deleted successfully!", {
@@ -87,8 +76,6 @@ function Comments({ articleId }) {
               {item.content}
             </p>
             {
-              /* each comment has uid
-                      compare to see if I am the owner of the comment to delete it */
               user?.uid === item.userId && (
                 <button onClick={() => deleteComment(item.id)}>Delete</button>
               )
@@ -111,6 +98,6 @@ function Comments({ articleId }) {
       )}
     </div>
   );
-}
+};
 
 export default Comments;

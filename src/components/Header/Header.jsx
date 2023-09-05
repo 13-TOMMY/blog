@@ -15,7 +15,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <div className="header-container">
-      <FaHome className="nav-link" onClick={() => navigate("/")} />
+      <FaHome className="nav-link home-btn" onClick={() => navigate("/")} />
       {user && (
         <Link to="/addArticle" className="auth-link">
           Add Article
