@@ -1,16 +1,14 @@
 .footer-container {
-  background-color: var(--color-background);
-  z-index: 999;
-}
-.footer {
-  height: 60px;
   background: rgba(94, 100, 114, 0.72);
   border-radius: 0 0 5px 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.3px);
   -webkit-backdrop-filter: blur(10.3px);
   border: 1px solid rgba(94, 100, 114, 0.4);
-  border-top: none;
+  z-index: 999;
+}
+.footer {
+  height: 60px;
   color: lightgrey;
   display: flex;
   align-items: center;

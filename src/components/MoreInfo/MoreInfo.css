@@ -1,13 +1,6 @@
 .contacts-container {
   height: 350px;
   width: 100%;
-  background: rgba(94, 100, 114, 0.72);
-  border-radius: 5px 5px 0 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.3px);
-  -webkit-backdrop-filter: blur(10.3px);
-  border: 1px solid rgba(94, 100, 114, 0.4);
-  border-bottom: none;
   color: white;
   display: flex;
   align-items: center;

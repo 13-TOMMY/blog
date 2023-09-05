@@ -6,7 +6,7 @@
   color: white;
   padding: 20px;
   background: rgba(94, 100, 114, 0.72);
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.3px);
   -webkit-backdrop-filter: blur(10.3px);
@@ -20,28 +20,32 @@
 }
 .home-btn {
   font-size: 38px;
+  cursor: pointer;
 }
 .nav-link,
 .auth-link {
   text-decoration: none;
   margin-left: 10px;
   color: white;
+  font-size: 20px;
+}
+.selected-category {
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 .auth-link {
-  background: rgba(94, 100, 114, 0.72);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.3px);
-  -webkit-backdrop-filter: blur(10.3px);
-  border: 1px solid rgba(94, 100, 114, 0.4);
+  background-color: var(--dark-background-color);
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  color: var(--white);
+  color: white;
+  font-weight: 500;
 }
 
 .username {
-  color: blue;
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 20px;
   margin-right: 10px;
 }

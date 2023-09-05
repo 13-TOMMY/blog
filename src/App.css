@@ -1,20 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
 }
 html {
-  background: rgb(255, 166, 158);
+  background: rgb(255, 255, 255);
   background: linear-gradient(
-    0deg,
-    rgba(255, 166, 158, 1) 0%,
-    rgba(250, 243, 221, 1) 10%,
-    rgba(184, 242, 230, 1) 20%,
-    rgba(174, 217, 224, 1) 30%,
-    rgba(255, 255, 255, 1) 60%
+    90deg,
+    rgba(255, 255, 255, 1) 87%,
+    rgba(255, 166, 158, 1) 89%,
+    rgba(250, 243, 221, 1) 90%,
+    rgba(184, 242, 230, 1) 91%,
+    rgba(174, 217, 224, 1) 92%,
+    rgba(255, 255, 255, 1) 94%
   );
 }
 
