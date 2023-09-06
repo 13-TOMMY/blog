@@ -91,6 +91,7 @@ const Comments = ({ articleId }) => {
             placeholder="Add comment"
             onChange={(e) => setNewComment(e.target.value)}
             value={newComment}
+            className="add-comment"
           />
         </form>
       ) : (

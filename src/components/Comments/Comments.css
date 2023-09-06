@@ -1,12 +1,23 @@
-.comment span{
-    width: 100px;
-    display: inline-block;
+.comment span {
+  width: 100px;
+  display: inline-block;
 }
 
-.comment{
-    border: 1px solid grey;
-    margin: 5px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
+.comment {
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 5px 10px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.add-comment {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid grey;
+
+  text-align: center;
 }

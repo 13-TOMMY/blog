@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
   font-weight: 300;
+  text-decoration: none;
 }
 html {
   background: rgb(255, 255, 255);
@@ -20,8 +21,6 @@ html {
 
 :root {
   --primary-color: #ffa69e;
-  --background-color: #faf3dd;
-  --accent-color: #b8f2e6;
   --secondary-color: #aed9e0;
   --dark-background-color: #5e6472;
   --white: #ffffff;

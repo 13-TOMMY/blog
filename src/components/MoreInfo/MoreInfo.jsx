@@ -27,7 +27,7 @@ function MoreInfo() {
         <div className="contacts-left">
           <h3>Keep in touch</h3>
           <p>
-            Curious about new offerings? <br /> Sign up for our weekly
+            Curious about new updates? <br /> Sign up for our weekly
             newsletter and stay informed.
           </p>
           <input

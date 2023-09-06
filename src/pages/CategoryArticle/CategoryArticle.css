@@ -1,5 +1,13 @@
-.category-articles{
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 80vh;
+.category-articles {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 80vh;
+  
+}
+.article-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90vw;
 }

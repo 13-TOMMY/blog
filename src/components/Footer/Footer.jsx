@@ -15,10 +15,8 @@ function Footer() {
         </div>
         <div className="footer-right">
           <p className="date-footer-right">2023</p>
-          <div className="copyright-container">
-            <FaRegCopyright />
-            <p className="p-footer-right">RE:serve</p>
-          </div>
+          <FaRegCopyright className="c-footer-right" />
+          <p className="p-footer-right">BLOG</p>
         </div>
       </div>
     </div>
