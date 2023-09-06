@@ -131,11 +131,12 @@ function AddArticle() {
             ))}
           </select>
         </div>
-        <div className="input-group">
+        <div className="input-group ">
           <label>Upload Image</label>
           <input
             type="file"
             id="image"
+            className="img-input"
             accept="image/*"
             onChange={(e) =>
               setFormData({ ...formData, image: e.target.files[0] })

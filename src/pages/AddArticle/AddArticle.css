@@ -24,6 +24,7 @@
 }
 .add-article-form {
   font-size: 28px;
+  color: white;
 }
 .input-group {
   display: flex;
@@ -44,6 +45,7 @@
   border-radius: 8px;
   border: solid 1px grey;
   font-size: 20px;
+  color: gray;
 }
 
 .input-group textarea {
@@ -58,17 +60,22 @@
   border-radius: 8px;
   background-color: white;
   cursor: pointer;
+  font-size: 20px;
+}
+.img-input {
+  background-color: white;
+  color: gray;
 }
 
 .add-article-form button {
-  background-color: var(--button-bg);
+  background-color: var(--secondary-color);
   border: none;
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 5px;
   margin-top: 20px;
-  width: 80%;
+  width: 40%;
   height: 50px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 700;
 }

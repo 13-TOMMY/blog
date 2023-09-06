@@ -2,7 +2,7 @@
   height: fit-content;
   margin: 10px;
   width: 400px;
-  height: 250px;
+  height: 325px;
   background: rgba(94, 100, 114, 0.72);
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,10 @@
   padding: 0 20px;
   width: 95%;
 }
-
+.article-card-info p {
+  font-size: 20px;
+  color: white;
+}
 .article-card-info a {
   text-decoration: none;
   color: var(--primary-color);
@@ -37,4 +40,6 @@
   font-weight: 500;
   cursor: pointer;
   background-color: var(--dark-background-color);
+  padding: 2.5px 5px;
+  border-radius: 5px;
 }
