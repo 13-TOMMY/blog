@@ -5,7 +5,7 @@ import Banner from '../../components/Banner/Banner'
 
 function HomePage() {
   return (
-    <div>
+    <div className='homepage-container'>
       <Banner />
     </div>
   )
